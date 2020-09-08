@@ -1,3 +1,6 @@
+//=============================================================================
+// RPG Maker MV - Custom Intro
+//=============================================================================
 /*:
  * @plugindesc Inicia el juego sin intro en el mapa donde inicia el jugador para intro custom
  * @author oma012
@@ -29,7 +32,7 @@
  * heroe si no al 1 ahora en el mapa donde inicia el new game tenemos que crear 
  * otro evento automatico para señalar que la trasparencia del jugador esta 
  * apagada, o si tambien tienes un inicio de juego custom pudes diseñarlo ahi,
- * NOTA importante el jugador aparecera en las mismcas cordenadas que en donde
+ * NOTA!!! importante el jugador aparecera en las mismcas cordenadas que en donde
  * este en el mapa de inicio ejemplo si en tu mapa de inicio el heroe esta en 
  * (5,5) cuando hagas new game y te manden a el otro mapa el heroe aparecera en el
  * (5,5) del nuevo mapa.
