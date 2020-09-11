@@ -45,7 +45,7 @@
  * este en el mapa del intro ejemplo si en tu mapa de intro el heroe esta en 
  * (5,5) cuando hagas new game y te manden a el otro mapa el heroe aparecera en el
  * (5,5) del nuevo mapa.
- * 
+ * video: https://youtu.be/WQIgjSFvY8c 
  * por si ponen videos agrege que si precionas cancel el video se salta
  * y despues de X tiempo de espera repite el intro
  */
