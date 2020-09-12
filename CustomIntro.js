@@ -26,6 +26,18 @@
  * @max 100
  * @default 1
  *
+ * @param ActiveFull16:X
+ * @type boolean
+ * @desc Permite que los videos se miren a resolucion 16:9 en fullscreen
+ * @default true
+ *
+ * @param Ratio9or10
+ * @type number
+ * @min 9
+ * @max 10
+ * @desc selecciona si tu ratio es 16:9 o 16:10
+ * @default 9
+ *
  * @help este pruging hace que te saltes el intro del juego para que puedas crear
  * tu propio intro nota para que se mire bien tienes que hacer los siguientes pasos
  * 1- en la base de datos, en Sistema, en Opciones palomea iniciar trasparente
@@ -45,7 +57,7 @@
  * este en el mapa del intro ejemplo si en tu mapa de intro el heroe esta en 
  * (5,5) cuando hagas new game y te manden a el otro mapa el heroe aparecera en el
  * (5,5) del nuevo mapa.
- * video: https://youtu.be/WQIgjSFvY8c 
+ * 
  * por si ponen videos agrege que si precionas cancel el video se salta
  * y despues de X tiempo de espera repite el intro
  */
@@ -107,19 +119,15 @@ Scene_Boot.prototype.start = function() {
 };
 
 Graphics._updateVideo = function() {
-    if (!this._isFullScreen())
+    if(miParametro["ActiveFull16:X"]&&!this._isFullScreen())
     {
-    //this._video.width = 1105;
-    //this._video.height = 1945;
-    //this._video.width = window.screen.width+30;
-    //this._video.height = window.screen.height+30;
-    this._video.width = window.screen.height+30;//work 1080p
-    this._video.height = window.screen.width;//
+    	this._video.width = (this._height/parseInt(miParametro["Ratio9or10"]))*16;
+    	this._video.height = this._height;
     }
     else
     {
-    this._video.width = this._width;
-    this._video.height = this._height;
+    	this._video.width = this._width;
+    	this._video.height = this._height;
     }
     this._video.style.zIndex = 2;
     this._centerElement(this._video);
@@ -131,6 +139,7 @@ Graphics.isVideoPlaying = function() {
       this._videoLoading = false;
       this._updateVisibility(false);
       this._video.pause();
+      Input.clear();
       return false;
     }
     else
