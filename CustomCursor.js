@@ -21,7 +21,7 @@ var imagesmycursor = [
 'Cursors/0003.png',
 'Cursors/0004.png',
 'Cursors/0005.png'
-]
+];
 var timeframecursor = 0;
 var myframecursor = 0;
 
