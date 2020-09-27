@@ -8,7 +8,8 @@
  * @help Cambia el cursor del juego
  * pon las 5 imagenes en la carpeta img/system
  * para hacer la animacion de tu cursor y que sean
- * 32X32 y llamalas 0001,0002,0003,0004 y 0005 
+ * 32X32 y llamalas 0001,0002,0003,0004 y 0005 las
+ * imagenes deben ser png para que funcione
  * en el mismo orden te tu animacion, cuando 
  * tenga tiempo lo paso a un archivo 
  * prite y/o que tu puedas poner las imagenes
