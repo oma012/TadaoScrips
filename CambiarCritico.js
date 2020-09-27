@@ -13,7 +13,6 @@
  * @min 1
  * @max 1000
  * @default 2
- * @help CambiarCritico.js
  *
  * @param UsarHabil
  * @type number
@@ -21,7 +20,6 @@
  * @min 0
  * @max 3
  * @default 0
- * @help CambiarCritico.js
  *
  * @param Habilidad
  * @type number
@@ -29,7 +27,6 @@
  * @min 1
  * @max 1000
  * @default 5
- * @help CambiarCritico.js
  * 
  * @param MejoraMulti
  * @type number
@@ -37,8 +34,6 @@
  * @min 0
  * @max 1000
  * @default 10
- * @help CambiarCritico.js
- *
  *
  * @param Habilidad2
  * @type number
@@ -46,7 +41,6 @@
  * @min 1
  * @max 1000
  * @default 6
- * @help CambiarCritico.js
  * 
  * @param MejoraMulti2
  * @type number
@@ -54,7 +48,6 @@
  * @min 0
  * @max 100
  * @default 1000
- * @help CambiarCritico.js
  *
  * @param Habilidad3
  * @type number
@@ -62,7 +55,6 @@
  * @min 1
  * @max 1000
  * @default 7
- * @help CambiarCritico.js
  * 
  * @param MejoraMulti3
  * @type number
@@ -88,67 +80,6 @@
  * 2 hablidades el calculo seria (2+1+3) con un total de 6 en el
  * multiplicador teniendo estas 2 habilidades.
  */
-
-/*
-*Game_Action.prototype.apply = function(target) {
-*    const result = target.result();
-*    this.subject().clearResult();
-*    result.clear();
-*    result.used = this.testApply(target);
-*    result.missed = result.used && Math.random() >= this.itemHit(target);
-*    result.evaded = !result.missed && Math.random() < this.itemEva(target);
-*    result.physical = this.isPhysical();
-*    result.drain = this.isDrain();
-*    if (result.isHit()) {
-*        if (this.item().damage.type > 0) {
-*            result.critical = Math.random() < this.itemCri(target);
-*            const value = this.makeDamageValue(target, result.critical);
-*            this.executeDamage(target, value);
-*        }
-*        for (const effect of this.item().effects) {
-*            this.applyItemEffect(target, effect);
-*        }
-*        this.applyItemUserEffect(target);
-*    }
-*    this.updateLastTarget(target);
-*};
-*Game_Action.prototype.makeDamageValue = function(target, critical) {
-*    const item = this.item();
-*    const baseValue = this.evalDamageFormula(target);
-*    let value = baseValue * this.calcElementRate(target);
-*    if (this.isPhysical()) {
-*        value *= target.pdr;
-*    }
-*    if (this.isMagical()) {
-*        value *= target.mdr;
-*    }
-*    if (baseValue < 0) {
-*        value *= target.rec;
-*    }
-*    if (critical) {
-*        value = this.applyCritical(value);
-*    }
-*   value = this.applyVariance(value, item.damage.variance);
-*    value = this.applyGuard(value, target);
-*   value = Math.round(value);
-*    return value;
-*};
-*
-*Game_Action.prototype.evalDamageFormula = function(target) {
-*    try {
-*        const item = this.item();
-*        const a = this.subject(); // eslint-disable-line no-unused-vars
-*        const b = target; // eslint-disable-line no-unused-vars
-*        const v = $gameVariables._data; // eslint-disable-line no-unused-vars
-*        const sign = [3, 4].includes(item.damage.type) ? -1 : 1;
-*        const value = Math.max(eval(item.damage.formula), 0) * sign;
-*        return isNaN(value) ? 0 : value;
-*    } catch (e) {
-*        return 0;
-*    }
-*};
-*
-*/
 
 Game_Action.prototype.applyCritical = function(damage) {
     var Parametros= PluginManager.parameters('CambiarCritico');
